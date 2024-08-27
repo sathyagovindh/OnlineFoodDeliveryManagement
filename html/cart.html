@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biryani Collection</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+            color: #333;
+        }
+        a:hover {
+            color: rgb(240, 128, 17);
+        }
+        .website_name {
+            color: rgb(240, 128, 17);
+            font-size: 20px;
+        }
+        header {
+            background-color: rgb(255, 255, 255);
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: fixed;
+            width: 100%;
+            height: 65px;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            z-index: 1000;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        header .logo {
+            height: 40px;
+            width: 40px;
+            background-color: #ccc;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+        header nav a {
+            margin-left: 20px;
+            text-decoration: none;
+            color: #000;
+        }
+        .filters {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 20px;
+            margin-top: 30px; /* Adjust based on header height */
+        }
+        .filters button {
+            padding: 10px 20px;
+            background-color: #f5f5f5;
+            border: 1px solid #ddd;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .filters button:hover {
+            background-color: #eaeaea;
+        }
+        .restaurants {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .restaurants h2 {
+            margin-bottom: 20px;
+            font-size: 28px;
+        }
+        .restaurant-card {
+            display: flex;
+            align-items: center;
+            background-color: #fff;
+            margin-bottom: 20px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .restaurant-card img {
+            width: 150px;
+            height: 150px;
+            border-radius: 10px;
+            margin-right: 20px;
+        }
+        .restaurant-info {
+            flex: 1;
+        }
+        .restaurant-info h3 {
+            margin: 0;
+            font-size: 22px;
+        }
+        .restaurant-info p {
+            margin: 5px 0;
+            color: #666;
+        }
+        .offer {
+            margin-top: 10px;
+            padding: 5px 10px;
+            background-color: #ff4d4d;
+            color: #fff;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        .dropdown {
+            position: relative;
+            display: inline-block;
+            margin-left: 20px;
+            margin-right: 50px;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        .dropdown:hover .dropbtn {
+            color: rgb(240, 128, 17);
+        }
+        .inner_section {
+            margin-left: 10%;
+        }
+        .inner_section h1 {
+            font-weight: 600;
+        }
+        .top-restaurant {
+            display: flex;
+            overflow-x: auto;
+            margin-left: 10%;
+            margin-top: 4%;
+            margin-right: 10%;
+        }
+        .restaurant-item {
+            min-width: 250px;
+            margin-right: 10px;
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .restaurant-item img {
+            width: 100%;
+            height: 150px;
+            border-radius: 8px;
+            object-fit: cover;
+            background-color: #ccc;
+        }
+        .restaurant-info {
+            margin-top: 10px;
+        }
+        .top_res {
+            padding-left: 10%;
+            font-weight: 600;
+        }
+        .section_1{
+            padding-top:7%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <div><img class="logo" src="../images/logo/logo.jpg"/></div>
+            <pre class="website_name"><b>Feast Factory</b></pre>
+        </div>
+        <nav>
+            <a href="#">Search</a>
+            <a href="../index.html#contact_us">Contact Us</a>
+            <a href="../index.html#about-section">About Us</a>
+            <a href="login.html">Login</a>
+            <div class="dropdown">
+                <span class="dropbtn">Other</span>
+                <span class="dropbtn"><img src="../images/arrow.png" width="10px" height="10px"></span>
+                <div class="dropdown-content">
+                    <a href="sign_up.html">Sign_up</a>
+                    <a href="#">Feedback</a>
+                    <a href="#">Log out</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <section class="section_1">
+        <div class="inner_section">
+            <h1>Biriyani</h1>
+            <p>Savor these delicious biriyanis to brighten your day.</p>
+            <div class="filters">
+                <button onclick="filterByTime()">Less than 30 mins</button>
+                <button onclick="filterByPriceRange(300, 600)">Rs. 300-Rs. 600</button>
+                <button onclick="filterByPriceRange(0, 300)">Less than Rs. 300</button>
+                <button onclick="sortByRating()">Sort by Rating</button>
+            </div>
+        </div>
+    </section>
+    
+    <h2 class="top_res">Top Restaurants</h2>
+    <div class="top-restaurant" id="restaurant-list">
+        <div class="restaurant-item" data-price="250" data-time="45" data-rating="4.2">
+            <img src="../images/sharif_biriyani.avif" alt="Sharief Bhai Biryani">
+            <div class="restaurant-info">
+                <h3>Sharief Bhai Biryani</h3>
+                <p>&#9733; 4.2 • 20-25 mins</p>
+                <p>Biriyani, Kebabs, Mughlai, Arabian</p>
+                <p>Saradha college road</p>
+                <div class="offer">40% OFF UPTO ₹80</div>
+            </div>
+        </div>
+        <div class="restaurant-item" data-price="400" data-time="20" data-rating="4.5">
+            <img src="../images/nikka_biriyani.avif" alt="Nikaa Biryani">
+            <div class="restaurant-info">
+                <h3>Nikaa Biryani</h3>
+                <p>&#9733; 4.5 • 15-20 mins</p>
+                <p>Biriyani, Indian, Chinese</p>
+                <p>Saradha college road</p>
+            </div>
+        </div>
+        <div class="restaurant-item" data-price="550" data-time="35" data-rating="5.0">
+            <img src="../images/biriyani_bazar.jpg" alt="Biryani Bazar">
+            <div class="restaurant-info">
+                <h3>Biryani Bazar</h3>
+                <p>&#9733; 5.0 • 25-30 mins</p>
+                <p>Biriyani, Chinese, South Indian, Indian</p>
+                <p>Saradha college road</p>
+            </div>
+        </div>
+        <div class="restaurant-item" data-price="300" data-time="20" data-rating="4.4">
+            <img src="../images/combo_box_biriyani.webp" alt="Combo Box">
+            <div class="restaurant-info">
+                <h3>Combo Box</h3>
+                <p>&#9733; 4.4 • 20-25 mins</p>
+                <p>Chinese, Biriyani</p>
+                <p>Trichy Main Road</p>
+                <div class="offer">50% OFF UPTO ₹100</div>
+            </div>
+        </div>
+        <div class="restaurant-item" data-price="150" data-time="25" data-rating="4.1">
+            <img src="../images/Chicken_Biriyani.jpg" alt="Chicken Biriyani">
+            <div class="restaurant-info">
+                <h3>Chicken Biriyani</h3>
+                <p>&#9733; 4.1 • 20-25 mins</p>
+                <p>Italian, Biriyani</p>
+                <p>Gandhipuram Main Road</p>
+            </div>
+        </div>
+    </div>
+    <div class="top-restaurant" id="restaurant-list">
+        <div class="restaurant-item" data-price="150" data-time="25" data-rating="4.1">
+            <img src="../images/Chicken_Biriyani.jpg" alt="Chicken Biriyani">
+            <div class="restaurant-info">
+                <h3>Chicken Biriyani</h3>
+                <p>&#9733; 4.1 • 20-25 mins</p>
+                <p>Italian, Biriyani</p>
+                <p>Gandhipuram Main Road</p>
+            </div>
+        </div>
+        <div class="restaurant-item" data-price="400" data-time="20" data-rating="4.5">
+            <img src="../images/nikka_biriyani.avif" alt="Nikaa Biryani">
+            <div class="restaurant-info">
+                <h3>Nikaa Biryani</h3>
+                <p>&#9733; 4.5 • 15-20 mins</p>
+                <p>Biriyani, Indian, Chinese</p>
+                <p>Saradha college road</p>
+            </div>
+        </div>
+        <div class="restaurant-item" data-price="300" data-time="40" data-rating="4.4">
+            <img src="../images/combo_box_biriyani.webp" alt="Combo Box">
+            <div class="restaurant-info">
+                <h3>Combo Box</h3>
+                <p>&#9733; 4.4 • 20-25 mins</p>
+                <p>Chinese, Biriyani</p>
+                <p>Trichy Main Road</p>
+                <div class="offer">50% OFF UPTO ₹100</div>
+            </div>
+        </div>
+        <div class="restaurant-item" data-price="250" data-time="45" data-rating="4.2">
+            <img src="../images/sharif_biriyani.avif" alt="Sharief Bhai Biryani">
+            <div class="restaurant-info">
+                <h3>Sharief Bhai Biryani</h3>
+                <p>&#9733; 4.2 • 20-25 mins</p>
+                <p>Biriyani, Kebabs, Mughlai, Arabian</p>
+                <p>Saradha college road</p>
+                <div class="offer">40% OFF UPTO ₹80</div>
+            </div>
+        </div>
+        <div class="restaurant-item" data-price="300" data-time="40" data-rating="4.4">
+            <img src="../images/combo_box_biriyani.webp" alt="Combo Box">
+            <div class="restaurant-info">
+                <h3>Combo Box</h3>
+                <p>&#9733; 4.4 • 20-25 mins</p>
+                <p>Chinese, Biriyani</p>
+                <p>Trichy Main Road</p>
+                <div class="offer">50% OFF UPTO ₹100</div>
+            </div>
+        </div>
+        
+        <div class="restaurant-item" data-price="550" data-time="30" data-rating="5.0">
+            <img src="../images/biriyani_bazar.jpg" alt="Biryani Bazar">
+            <div class="restaurant-info">
+                <h3>Biryani Bazar</h3>
+                <p>&#9733; 5.0 • 25-30 mins</p>
+                <p>Biriyani, Chinese, South Indian, Indian</p>
+                <p>Saradha college road</p>
+            </div>
+        </div>
+      
+        
+    </div>
+    <script>
+        function filterByTime() {
+            const items = document.querySelectorAll('.restaurant-item');
+            items.forEach(item => {
+                const time = parseInt(item.getAttribute('data-time'));
+                if (time > 30) {
+                    item.style.display = 'none';
+                } else {
+                    item.style.display = 'block';
+                }
+            });
+        }
+
+        function filterByPriceRange(min, max) {
+            const items = document.querySelectorAll('.restaurant-item');
+            items.forEach(item => {
+                const price = parseInt(item.getAttribute('data-price'));
+                if (price < min || price > max) {
+                    item.style.display = 'none';
+                } else {
+                    item.style.display = 'block';
+                }
+            });
+        }
+
+        function sortByRating() {
+            const container = document.getElementById('restaurant-list');
+            const items = Array.from(container.getElementsByClassName('restaurant-item'));
+
+            items.sort((a, b) => {
+                const ratingA = parseFloat(a.getAttribute('data-rating'));
+                const ratingB = parseFloat(b.getAttribute('data-rating'));
+                return ratingB - ratingA;
+            });
+
+            items.forEach(item => container.appendChild(item));
+        }
+    </script>
+</body>
+</html>

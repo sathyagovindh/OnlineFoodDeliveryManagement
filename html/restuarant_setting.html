@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notification Settings</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+    integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+   
+    height: 100vh;
+    margin: 0;
+    padding:0;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: #fff;
+     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  position:fixed;
+  width:99%;
+
+ 
+}
+
+.logo {
+
+    background-color: #ccc;
+    border-radius: 50%;  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   
+}
+
+.website-name {
+    flex: 1;
+    margin-left: 10px;
+    color: rgb(240, 128, 17);
+    font-size: 20px;      
+    font-weight: bold;
+}
+
+.search {
+    width: 200px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.header-icons {
+    display: flex;
+    align-items: center;
+}
+
+.bell-icon, .profile-icon {
+    margin-left: 10px;
+    font-size: 24px;
+    cursor: pointer;
+    
+
+}
+.profile-icon {
+    background-color: #e4dddd;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+}
+
+    
+.container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    width: 50%;
+  margin-left:22%;
+ margin-top:3%;
+ height:650px;
+  
+
+   
+}
+
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.setting {
+    margin-bottom: 15px;
+   
+}
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+   
+select {
+    width: 100%;
+    padding: 15px;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    
+}
+
+.update-btn {
+    background-color: #f58220;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+    cursor: pointer;
+}
+
+.update-btn:hover {
+    background-color: #e6711f;
+}
+
+           
+.dropdown {
+    position: relative;
+    display: inline-block;
+            margin-left: 10px;
+            margin-right:10px;
+       
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            padding-top:10%;
+            background-color: #f9f9f9;
+            width: 130px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            margin-right: 20%;
+            margin-top:70%;
+            
+
+           
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+           
+        }
+        
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+       }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+          
+          
+        }
+       
+        .dropdown:hover .dropbtn {
+            color:rgb(240, 128, 17);
+        
+        }
+        section{
+            padding-top: 5%;
+            padding-left:15%;
+        }
+        
+        .sidebar {
+            width: 250px;
+            height: 100vh;
+   
+            position: fixed;
+            top: 0;
+            left: 0;
+            margin-top: 65px;
+          padding-top:30px;
+            text-align: center;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        }
+
+        .sidebar a {
+            display: block;
+            color:black;
+            padding: 15px;
+            text-decoration: none;
+            margin-bottom: 10px;
+        }
+
+        .sidebar a:hover {
+          color:rgb(240, 128, 17);
+    background-color: #e4dddd;
+        }
+        section h2{
+            color: rgb(240, 128, 17);
+        }
+           
+.sidebar a{
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    height: 30px;
+  width:150px;
+  margin-left:30px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    padding:20px 20px 10px 10px;
+    border-radius:15px;
+  
+  
+  
+
+      }
+      .support-btn{
+        margin-top: 45%;
+        border: none;
+        margin-right: 15%;
+        
+      }
+.support-btn a{
+    text-decoration:none;
+   
+    margin-top: auto;
+    padding: 10px;
+    
+    background-color: rgb(240, 128, 17);
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.support-btn a:hover{
+    background-color: rgb(240, 128, 17);
+    color: #fff;
+}
+    </style>
+</head>
+<body>
+    
+       
+   <header class="header">
+    <div class="logo"><img src="../images/logo/logo.jpg" width="40px" height="40px"/></div>
+    <div class="website-name">Feast Factory</div>
+    <input type="text" class="search" placeholder="search">
+    <div class="header-icons">
+        <div class="bell-icon">🔔</div>
+        <div class="dropdown">
+            <span class="dropbtn"><img src="../images/arrow.png" width="20px" height="20px"></span>
+            
+            <div class="dropdown-content">
+                <a href="#">Feedback</a>
+                <a href="#">Contact us</a>
+                <a href="#">Log out</a>
+            </div>
+        </div>
+        <div class="profile-icon"></div>
+       
+    </div>
+</header>
+
+<div class="sidebar">
+       
+    <a href="restuarant_admin.html">Overview</a>
+                    <a href="sales.html">Sales</a>
+                <a href="orders.html">Orders</a>
+                 <a href="edit menu.html">Menu</a>
+                <a href="customer.html">Customer</a>
+                <a href="restuarant_setting.html">Settings</a>
+                <button class="support-btn"><a href="../index.html#contact_us">Support</a></button>
+</div>
+
+<section>
+    <center><h2>Settings</h2></center>
+    <div class="container">
+        
+        <form>
+            <div class="setting">
+                <label for="email-notifications">Email Notifications</label>
+                <select id="email-notifications">
+                    <option value="enabled">Enabled</option>
+                    <option value="disabled">Disabled</option>
+                </select>
+            </div>
+            
+            <div class="setting">
+                <label for="sms-notifications">SMS Notifications</label>
+                <select id="sms-notifications">
+                    <option value="enabled">Enabled</option>
+                    <option value="disabled">Disabled</option>
+                </select>
+            </div>
+
+            <div class="setting">
+                <label for="push-notifications">Push Notifications</label>
+                <select id="push-notifications">
+                    <option value="enabled">Enabled</option>
+                    <option value="disabled">Disabled</option>
+                </select>
+            </div>
+
+            <div class="setting">
+                <label for="app-notifications">App Notifications</label>
+                <select id="app-notifications">
+                    <option value="enabled">Enabled</option>
+                    <option value="disabled">Disabled</option>
+                </select>
+            </div>
+
+            <div class="setting">
+                <label for="browser-notifications">Browser Notifications</label>
+                <select id="browser-notifications">
+                    <option value="enabled">Enabled</option>
+                    <option value="disabled">Disabled</option>
+                </select>
+            </div>
+
+            <div class="setting">
+                <label for="newsletter-subscription">Newsletter Subscription</label>
+                <select id="newsletter-subscription">
+                    <option value="enabled">Enabled</option>
+                    <option value="disabled">Disabled</option>
+                </select>
+            </div>
+
+            <div class="setting">
+                <label for="notification-frequency">Notification Frequency</label>
+                <select id="notification-frequency">
+                    <option value="immediately">Immediately</option>
+                    <option value="daily">Daily</option>
+                    <option value="weekly">Weekly</option>
+                    <option value="monthly">Monthly</option>
+                </select>
+            </div>
+
+            <button type="submit" class="update-btn">Update Notifications</button>
+        </form>
+    </div>
+</section>
+</body>
+</html>

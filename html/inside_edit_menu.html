@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>inside_edit</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .menu-management-container {
+            width: 70%;
+            margin-top:50px;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .menu-management-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .menu-management-header h1 {
+            margin: 0;
+            font-size: 24px;
+            font-weight: normal;
+        }
+        .menu-management-header button {
+            background: rgb(240, 128, 17);
+        
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+      
+        .menu-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .menu-table th,
+        .menu-table td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        .menu-table th {
+            background-color: #f2f2f2;
+        }
+        .menu-table td img {
+            width: 50px;
+            height: 50px;
+            object-fit: cover;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+        .menu-table td .actions {
+            display: flex;
+            gap: 10px;
+        }
+        .menu-table td .actions button {
+            background:rgb(240, 128, 17);
+        
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        
+              
+.header {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+
+    background-color: #ccc;
+    border-radius: 50%;  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   
+}
+
+.website-name {
+    flex: 1;
+    margin-left: 10px;
+    color: rgb(240, 128, 17);
+    font-size: 20px;      
+    font-weight: bold;
+}
+
+.search {
+    width: 200px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.header-icons {
+    display: flex;
+    align-items: center;
+}
+
+.bell-icon, .profile-icon {
+    margin-left: 10px;
+    font-size: 24px;
+    cursor: pointer;
+    
+
+}
+.profile-icon {
+    background-color: #e4dddd;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+}
+
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+            margin-left: 10px;
+            margin-right:10px;
+       
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            padding-top:10%;
+            background-color: #f9f9f9;
+            width: 130px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            margin-right: 20%;
+            margin-top:70%;
+            
+
+           
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+           
+        }
+        
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+       }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+          
+          
+        }
+       
+        .dropdown:hover .dropbtn {
+            color:rgb(240, 128, 17);
+        
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="logo"><img src="../images/logo/logo.jpg" width="40px" height="40px"/></div>
+        <div class="website-name">Feast Factory</div>
+        <input type="text" class="search" placeholder="search">
+        <div class="header-icons">
+            <div class="bell-icon">🔔</div>
+            <div class="dropdown">
+                <span class="dropbtn"><img src="../images/arrow.png" width="20px" height="20px"></span>
+                
+                <div class="dropdown-content">
+                    <a href="#">Feedback</a>
+                    <a href="#">Contact us</a>
+                    <a href="#">Log out</a>
+                </div>
+            </div>
+            <div class="profile-icon"></div>
+           
+        </div>
+    </header>
+    <center>
+<div class="menu-management-container">
+    <div class="menu-management-header">
+        <h1>Restaurant Menu</h1>
+        <button>Add New Item</button>
+    </div>
+    <table class="menu-table">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Price</th>
+                <th>Manage</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <img src="../images/edit_1.jpg" alt="Pasta">
+                    Pasta
+                </td>
+                <td>$13.50</td>
+                <td>
+                    <div class="actions">
+                        <button>Edit</button>
+                        <button>Duplicate</button>
+                        <button>Delete</button>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <img src="../images/edit_2.jpg" alt="Flash Steak">
+                    Grill
+                </td>
+                <td>$9.50</td>
+                <td>
+                    <div class="actions">
+                        <button>Edit</button>
+                        <button>Duplicate</button>
+                        <button>Delete</button>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <img src="../images/edit_3.jpg" alt="Tagliatelle Bolognese">
+                    Tagliatelle Bolognese
+                </td>
+                <td>$11.00</td>
+                <td>
+                    <div class="actions">
+                        <button>Edit</button>
+                        <button>Duplicate</button>
+                        <button>Delete</button>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+</center>
+</body>
+</html>

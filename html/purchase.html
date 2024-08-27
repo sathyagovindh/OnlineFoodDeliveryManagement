@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout Page</title>
+   <style>
+    body {
+    font-family: Arial, sans-serif;
+}
+
+
+.header {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+
+    background-color: #ccc;
+    border-radius: 50%;  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   
+}
+
+.website-name {
+    flex: 1;
+    margin-left: 10px;
+    color: rgb(240, 128, 17);
+    font-size: 20px;      
+    font-weight: bold;
+}
+
+.search {
+    width: 200px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.header-icons {
+    display: flex;
+    align-items: center;
+}
+
+.bell-icon, .profile-icon {
+    margin-left: 10px;
+    font-size: 24px;
+    cursor: pointer;
+    
+
+}
+.profile-icon {
+    background-color: #e4dddd;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+}
+
+
+.container {
+    display: flex;
+    justify-content: space-around;
+    padding: 60px;
+}
+        
+.billing-details,
+.order-summary {
+    border: 1px solid #ccc;
+    padding: 20px;
+    width: 45%;
+}
+
+h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-top: 10px;
+}
+
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+input[type="number"],
+input[type="password"],
+select,
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+input[type="radio"] {
+    margin-right: 10px;
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.checkbox-group input {
+    margin-right: 10px;
+}
+
+textarea {
+    height: 60px;
+}
+
+button {
+    background-color: rgb(240, 128, 17);
+    color: white;
+    border: none;
+    padding: 10px;
+    margin-top: 20px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+button:hover {
+    background-color:rgb(240, 128, 17);
+}
+
+.error-message {
+    color: red;
+    margin-top: 10px;
+}
+
+.order-summary .order-item,
+.order-summary .order-total,
+.order-summary .order-tax {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.order-summary .coupon {
+    margin-top: 20px;
+}
+
+.order-summary .coupon a {
+    color: rgb(240, 128, 17);
+    text-decoration: none;
+}
+
+.order-summary .coupon a:hover {
+    text-decoration: underline;
+}
+
+.order-summary .coupon input {
+    width: calc(100% - 110px);
+    margin-right: 10px;
+}
+
+.order-summary .coupon button {
+    width: 100px;
+    background-color:rgb(240, 128, 17);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.order-summary .coupon button:hover {
+    background-color:rgb(240, 128, 17);
+}
+
+.payment-method {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.payment-method img {
+    margin-left: 10px;
+}
+.coupon{
+    display:flex;
+}
+
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+            margin-left: 10px;
+            margin-right:10px;
+       
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            padding-top:10%;
+            background-color: #f9f9f9;
+            width: 130px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            margin-right: 20%;
+            margin-top:70%;
+            
+
+           
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+           
+        }
+        
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+       }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+          
+          
+        }
+       
+        .dropdown:hover .dropbtn {
+            color:rgb(240, 128, 17);
+        
+        }
+   </style>
+</head>
+<body>
+    <header class="header">
+        <div class="logo"><img src="../images/logo/logo.jpg" width="40px" height="40px"/></div>
+        <div class="website-name">Feast Factory</div>
+      
+        <div class="header-icons">
+            <div class="bell-icon">🔔</div>
+            <div class="dropdown">
+                <span class="dropbtn"><img src="../images/arrow.png" width="20px" height="20px"></span>
+                
+                <div class="dropdown-content">
+                    <a href="#">Feedback</a>
+                    <a href="#">Contact us</a>
+                    
+                </div>
+            </div>
+            <div class="profile-icon"></div>
+           
+        </div>
+    </header>
+    <div class="container">
+        
+        <div class="billing-details">
+            <h2>Billing details</h2>
+           
+            <form id="billingForm">
+                <label for="firstName">First name *</label>
+                <input type="text" id="firstName" name="firstName" required>
+
+                <label for="lastName">Last name *</label>
+                <input type="text" id="lastName" name="lastName" required>
+
+               
+                <label for="country">Country / Region *</label>
+                <select id="country" name="country" required>
+                    <option value="United States (US)">India</option>
+                    <!-- Add other countries as needed -->
+                </select>
+
+                <label for="state">State *</label>
+                <select id="state" name="state" required>
+                    <option value="AP">Andhra Pradesh</option>
+	<option value="AR">Arunachal Pradesh</option>
+	<option value="AS">Assam</option>
+	<option value="BR">Bihar</option>
+	<option value="CT">Chhattisgarh</option>
+	<option value="GA">Gujarat</option>
+	<option value="HR">Haryana</option>
+	<option value="HP">Himachal Pradesh</option>
+	<option value="JK">Jammu and Kashmir</option>
+	<option value="GA">Goa</option>
+	<option value="JH">Jharkhand</option>
+	<option value="KA">Karnataka</option>
+	<option value="KL">Kerala</option>
+	<option value="MP">Madhya Pradesh</option>
+	<option value="MH">Maharashtra</option>
+    <option value="MN">Manipur</option>
+    <option value="ML">Meghalaya</option>
+	<option value="MZ">Mizoram</option>
+	<option value="NL">Nagaland</option>
+	<option value="OR">Odisha</option>
+	<option value="PB">Punjab</option>
+	<option value="RJ">Rajasthan</option>
+	<option value="SK">Sikkim</option>
+	<option value="TN">Tamil Nadu</option>
+	<option value="TG">Telangana</option>
+	<option value="TR">Tripura</option>
+	<option value="UT">Uttarakhand</option>
+	<option value="UP">Uttar Pradesh</option>
+	<option value="WB">West Bengal</option>
+	<option value="AN">Andaman and Nicobar Islands</option>
+	<option value="CH">Chandigarh</option>
+	<option value="DN">Dadra and Nagar Haveli</option>
+	<option value="DD">Daman and Diu</option>
+	<option value="DL">Delhi</option>
+	<option value="LD">Lakshadweep</option>
+	<option value="PY">Puducherry</option>
+                    <!-- Add other states as needed -->
+                </select>
+
+                <label for="streetAddress">Street address *</label>
+                <input type="text" id="streetAddress" name="streetAddress" placeholder="House number and street name" required>
+
+                <label for="townCity">Town / City *</label>
+                <input type="text" id="townCity" name="townCity" required>
+
+                <label for="zipCode">ZIP Code *</label>
+                <input type="text" id="zipCode" name="zipCode" required>
+
+                <label for="phone">Phone *</label>
+                <input type="tel" id="phone" name="phone" required>
+
+                <label for="email">Email address *</label>
+                <input type="email" id="email" name="email" required>
+
+                <div class="checkbox-group">
+                    <input type="checkbox" id="emailUpdates" name="emailUpdates">
+                    <label for="emailUpdates">Sign me up to receive email updates and news (optional)</label>
+                </div>
+
+                <label for="orderNotes">Order notes (optional)</label>
+                <textarea id="orderNotes" name="orderNotes" placeholder="Notes about your order, e.g. special notes for delivery. (72 characters limit)"></textarea>
+
+                <div class="error-message" id="addressError" style="display: none;">
+                    <p>[309] The address value was incomplete. The address value NULL was incomplete. You must provide either a valid postal code, line1 + city + region, or line1 + postal code.</p>
+                </div>
+
+                <button type="button" id="nextButton">Next</button>
+            </form>
+        </div>
+        <div class="order-summary">
+            <h2>Your order</h2>
+            <div class="order-item">
+                <p>Chicken_Biriyani × 1</p>
+                <p>Rs.249.00</p>
+            </div>
+            <div class="order-total">
+                <p>Subtotal</p>
+                <p>Rs.249.00</p>
+            </div>
+            <div class="order-tax">
+                <p>Tax</p>
+                <p>Taxes will be calculated after you validate your address</p>
+            </div>
+            <div class="order-total">
+                <p>Total</p>
+                <p>Rs.300.00</p>
+            </div>
+
+            <div class="coupon">
+                <p>Have a Coupon?</p>
+             
+                <input type="text" id="couponCode" placeholder="Coupon code">
+                <button type="button" id="applyCouponButton">Apply Coupon</button>
+            </div>
+
+            <h2>Payment</h2>
+            <form id="paymentForm">
+                <div class="payment-method">
+                    <input type="radio" id="creditCard" name="paymentMethod" value="creditCard" checked>
+                    <label for="creditCard">Credit Card</label>
+                    <img src="../images/visa.webp" alt="Visa Mastercard" width="80%" height="40px">
+                </div>
+
+                <label for="cardHolderName">Cardholder's Name *</label>
+                <input type="text" id="cardHolderName" name="cardHolderName" required>
+
+                <label for="cardNumber">Card Number *</label>
+                <input type="text" id="cardNumber" name="cardNumber" required>
+
+                <label for="expiration">Expiration (MM/YY) *</label>
+                <input type="text" id="expiration" name="expiration" placeholder="MM / YY" required>
+
+                <label for="cvc">Card Security Code *</label>
+                <input type="text" id="cvc" name="cvc" required>
+
+                <div class="checkbox-group">
+                    <input type="checkbox" id="agreeTerms" name="agreeTerms" required>
+                    <label for="agreeTerms">I have read and agree to the website <a href="#">terms and conditions</a> *</label>
+                </div>
+
+                <button type="button" id="placeOrderButton">Place Order</button>
+            </form>
+        </div>
+    </div>
+    <script>
+        document.getElementById('nextButton').addEventListener('click', function() {
+    const requiredFields = [
+        'firstName', 'lastName', 'country', 'state',
+        'streetAddress', 'townCity', 'zipCode', 'phone', 'email'
+    ];
+
+    let allFieldsFilled = true;
+    requiredFields.forEach(field => {
+        if (document.getElementById(field).value === '') {
+            allFieldsFilled = false;
+        }
+    });
+
+    if (!allFieldsFilled) {
+        document.getElementById('addressError').style.display = 'block';
+    } else {
+        document.getElementById('addressError').style.display = 'none';
+        alert('Placed order Successfully');
+    }
+})   
+    
+    </script>
+</body>
+</html>

@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Manager Dashboard</title>
+    <style>
+        * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f8f8;
+    overflow:hidden;
+   
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+
+    background-color: #ccc;
+    border-radius: 50%;  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   
+}
+
+.website-name {
+    flex: 1;
+    margin-left: 10px;
+    color: rgb(240, 128, 17);
+    font-size: 20px;      
+    font-weight: bold;
+}
+
+.search {
+    width: 200px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.header-icons {
+    display: flex;
+    align-items: center;
+}
+
+.bell-icon, .profile-icon {
+    margin-left: 10px;
+    font-size: 24px;
+    cursor: pointer;
+    
+
+}
+.profile-icon {
+    background-color: #e4dddd;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+}
+
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+
+    height: 635px;
+    background-color: #fff;
+    box-shadow: 2px 0 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.sidebar nav ul {
+    list-style: none;
+}
+
+.sidebar nav ul li {
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    height: 55px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    padding:20px 40px 20px 45px;
+    border-radius:15px;
+  
+
+}
+.sidebar nav ul li a{
+    text-decoration:none;
+    color:black;
+    
+}
+.sidebar nav ul li:hover{
+    color:rgb(240, 128, 17);
+    background-color: #e4dddd;
+}
+
+.support-btn {
+    margin-top: auto;
+    padding: 10px;
+    border: none;
+    background-color: rgb(240, 128, 17);
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.support-btn a{
+    text-decoration:none;
+    color:white;
+}
+
+.main-content {
+    flex: 1;
+    padding: 20px;
+}
+
+.dashboard-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.time-filter {
+    margin-right: 10px;
+    padding: 10px;
+    border: none;
+    background-color:rgb(240, 128, 17);
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    width:100px;
+}
+
+.location-btn, .date-btn {
+    margin-left: auto;
+    padding: 10px;
+    margin:0px;
+    
+    border: 1px solid #ccc;
+    background-color: #fff;
+    color: #333;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.location-btn{
+    margin-left: 600px;
+}
+
+.stats {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.stat {
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    text-align: center;
+    width: 22%;
+}
+
+.stat-title {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.stat-value {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+}
+
+.chart {
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    width:1200px;
+    height:400px;
+}
+.small_container{
+    display: flex;
+}
+
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+            margin-left: 10px;
+            margin-right:10px;
+       
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            padding-top:10%;
+            background-color: #f9f9f9;
+            width: 130px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            margin-right: 20%;
+            margin-top:70%;
+            
+
+           
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+           
+        }
+        
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+       }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+          
+          
+        }
+       
+        .dropdown:hover .dropbtn {
+            color:rgb(240, 128, 17);
+        
+        }
+       
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="logo"><img src="../images/logo/logo.jpg" width="40px" height="40px"/></div>
+            <div class="website-name">Feast Factory</div>
+            <input type="text" class="search" placeholder="search">
+            <div class="header-icons">
+                <div class="bell-icon">🔔</div>
+                <div class="dropdown">
+                    <span class="dropbtn"><img src="../images/arrow.png" width="20px" height="20px"></span>
+                    
+                    <div class="dropdown-content">
+                        <a href="#">Feedback</a>
+                        <a href="#">Contact us</a>
+                        <a href="#">Log out</a>
+                    </div>
+                </div>
+                <div class="profile-icon"></div>
+               
+            </div>
+        </header>
+        <div class="small_container">
+        <aside class="sidebar">
+            <nav>
+                <ul>
+                    <li><a href="restuarant_admin.html">Overview</a></li>
+                    <li><a href="sales.html">Sales</a></li>
+                    <li><a href="orders.html">Orders</a></li>
+                    <li><a href="edit menu.html">Menu</a></li>
+                    <li><a href="customer.html">Customer</a></li>
+                    <li><a href="restuarant_setting.html">Settings</a></li>
+                </ul>
+            </nav>
+            <button class="support-btn"><a href="../index.html#contact_us">Support</a></button>
+        </aside>
+        <main class="main-content">
+            <div class="dashboard-header">
+                <button class="time-filter">Today</button>
+                <button class="time-filter">This week</button>
+                <button class="time-filter">This month</button>
+                <select id="countries" name="countries" class="location-btn">
+                    <option value="AF">Afghanistan</option>
+                    <option value="AL">Albania</option>
+                    <option value="DZ">Algeria</option>
+                    <option value="AS">American Samoa</option>
+                    <option value="AD">Andorra</option>
+                    <option value="AO">Angola</option>
+                    <option value="AI">Anguilla</option>
+                    <option value="AQ">Antarctica</option>
+                    <option value="AG">Antigua and Barbuda</option>
+                    <option value="AR">Argentina</option>
+                    <option value="AM">Armenia</option>
+                    <option value="AW">Aruba</option>
+                    <option value="AU">Australia</option>
+                    <option value="AT">Austria</option>
+                    <option value="AZ">Azerbaijan</option>
+                    <option value="BS">Bahamas</option>
+                    <option value="BH">Bahrain</option>
+                    <option value="BD">Bangladesh</option>
+                    <option value="BB">Barbados</option>
+                    <option value="BY">Belarus</option>
+                    <option value="BE">Belgium</option>
+                    <option value="BZ">Belize</option>
+                    <option value="BJ">Benin</option>
+                    <option value="BM">Bermuda</option>
+                    <option value="BT">Bhutan</option>
+                    <option value="BO">Bolivia</option>
+                    <option value="BA">Bosnia and Herzegovina</option>
+                    <option value="BW">Botswana</option>
+                    <option value="QA">Qatar</option>
+                    <option value="CG">Republic of the Congo</option>
+                    <option value="RO">Romania</option>
+                    <option value="RU">Russia</option>
+                    <option value="RW">Rwanda</option>
+                    <option value="RE">Réunion</option>
+                    <option value="BL">Saint Barthélemy</option>
+                    <option value="SH">Saint Helena</option>
+                    <option value="KN">Saint Kitts and Nevis</option>
+                    <option value="LC">Saint Lucia</option>
+                    <option value="MF">Saint Martin</option>
+                    <option value="PM">Saint Pierre and Miquelon</option>
+                    <option value="VC">Saint Vincent and the Grenadines</option>
+                    <option value="WS">Samoa</option>
+                    <option value="SM">San Marino</option>
+                    <option value="SA">Saudi Arabia</option>
+                    <option value="SN">Senegal</option>
+                    <option value="RS">Serbia</option>
+                    <option value="SC">Seychelles</option>
+                    <option value="SL">Sierra Leone</option>
+                    <option value="SG">Singapore</option>
+                    <option value="SX">Sint Maarten</option>
+                    <option value="SK">Slovakia</option>
+                    <option value="SI">Slovenia</option>
+                    <option value="SB">Solomon Islands</option>
+                    <option value="SO">Somalia</option>
+                    <option value="ZA">South Africa</option>
+                    <option value="KR">South Korea</option>
+                    <option value="SS">South Sudan</option>
+                    <option value="ES">Spain</option>
+                    <option value="LK">Sri Lanka</option>
+                    <option value="SD">Sudan</option>
+                    <option value="SR">Suriname</option>
+                    <option value="SJ">Svalbard and Jan Mayen</option>
+                    <option value="SZ">Swaziland</option>
+                    <option value="SE">Sweden</option>
+                    <option value="CH">Switzerland</option>
+                    <option value="SY">Syria</option>
+                    <option value="TW">Taiwan</option>
+                    <option value="TJ">Tajikistan</option>
+                    <option value="TZ">Tanzania</option>
+                    <option value="TH">Thailand</option>
+                    <option value="TG">Togo</option>
+                    <option value="TK">Tokelau</option>
+                    <option value="TO">Tonga</option>
+                    <option value="TT">Trinidad and Tobago</option>
+                    <option value="TN">Tunisia</option>
+                    <option value="TR">Turkey</option>
+                    <option value="TM">Turkmenistan</option>
+                    <option value="TC">Turks and Caicos Islands</option>
+                    <option value="TV">Tuvalu</option>
+                    <option value="UG">Uganda</option>
+                    <option value="UA">Ukraine</option>
+                    <option value="AE">United Arab Emirates</option>
+                    <option value="GB">United Kingdom</option>
+                    <option value="US">United States</option>
+                    <option value="UY">Uruguay</option>
+                    <option value="UZ">Uzbekistan</option>
+                    <option value="VU">Vanuatu</option>
+                    <option value="VA">Vatican</option>
+                    <option value="VE">Venezuela</option>
+                    <option value="VN">Vietnam</option>
+                    <option value="VI">Virgin Islands</option>
+                    <option value="WF">Wallis and Futuna</option>
+                    <option value="EH">Western Sahara</option>
+                    <option value="YE">Yemen</option>
+                    <option value="ZM">Zambia</option>
+                    <option value="ZW">Zimbabwe</option>
+                </select>
+
+                <input type="date" id="date" name="date" class="date-btn">
+            </div>
+            <div class="stats">
+                <div class="stat">
+                    <div class="stat-title">Total Sales</div>
+                    <div class="stat-value">$343243</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-title">Order Count</div>
+                    <div class="stat-value">43534</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-title">Customer Count</div>
+                    <div class="stat-value">4454</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-title">Online Orders</div>
+                    <div class="stat-value">48544</div>
+                </div>
+            </div>
+            <div class="chart">
+                <img src="../images/statical.png" alt="Chart showing sales data for Quick-service and Full-service Restaurants" width="100%" height="100%" />
+            </div>
+        </main>
+    </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage menu</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+    integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+
+    <style>
+        
+        body {
+            font-family: Arial, sans-serif;
+           background-color: #fff;
+            margin: 0;
+            padding: 0;
+        }
+
+.header {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: #fff;
+     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  position:fixed;
+  width:99%;
+}
+
+.logo {
+
+    background-color: #ccc;
+    border-radius: 50%;  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   
+}
+
+.website-name {
+    flex: 1;
+    margin-left: 10px;
+    color: rgb(240, 128, 17);
+    font-size: 20px;      
+    font-weight: bold;
+}
+
+.search {
+    width: 200px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.header-icons {
+    display: flex;
+    align-items: center;
+}
+
+.bell-icon, .profile-icon {
+    margin-left: 10px;
+    font-size: 24px;
+    cursor: pointer;
+    
+
+}
+.profile-icon {
+    background-color: #e4dddd;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+}
+
+    
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .form-group input, .form-group textarea, .form-group select {
+           
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .form-group button {
+             background:rgb(240, 128, 17);
+           
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+    
+      .form-group button a{
+        text-decoration:none;
+        color:white;
+      }      
+.dropdown {
+    position: relative;
+    display: inline-block;
+            margin-left: 10px;
+            margin-right:10px;
+       
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            padding-top:10%;
+            background-color: #f9f9f9;
+            width: 130px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            margin-right: 20%;
+            margin-top:70%;
+            
+
+           
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+           
+        }
+        
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+       }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+          
+          
+        }
+       
+        .dropdown:hover .dropbtn {
+            color:rgb(240, 128, 17);
+        
+        }
+        section{
+          
+          padding:5%;
+     }
+     section h2{
+            color: rgb(240, 128, 17);
+        }
+      .form-group input, .form-group textarea{
+        width:350px;
+      }
+      .form-group select{
+        width:370px;
+      }
+      form{
+        margin-top:3%;
+                   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+      padding-left:10%;
+      width:40%;
+      padding-top:5%;
+        padding-bottom:5%;
+        margin-left:35%;
+
+      }
+      .card h2{
+        padding-left: 20%;
+      }
+      .form-group textarea{
+        height:60px;
+      }
+      
+      .sidebar {
+            width: 250px;
+            height: 100vh;
+   
+            position: fixed;
+            top: 0;
+            left: 0;
+            margin-top: 65px;
+          padding-top:30px;
+            text-align: center;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        }
+
+        .sidebar a {
+            display: block;
+            color:black;
+            padding: 15px;
+            text-decoration: none;
+            margin-bottom: 10px;
+        }
+
+        .sidebar a:hover {
+          color:rgb(240, 128, 17);
+    background-color: #e4dddd;
+        }
+           
+.sidebar a{
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    height: 30px;
+  width:150px;
+  margin-left:30px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    padding:20px 20px 10px 10px;
+    border-radius:15px;
+  
+  
+  
+
+      }
+    </style>
+</head>
+<body>
+       
+   <header class="header">
+    <div class="logo"><img src="../images/logo/logo.jpg" width="40px" height="40px"/></div>
+    <div class="website-name">Feast Factory</div>
+    <input type="text" class="search" placeholder="search">
+    <div class="header-icons">
+        <div class="bell-icon">🔔</div>
+        <div class="dropdown">
+            <span class="dropbtn"><img src="../images/arrow.png" width="20px" height="20px"></span>
+            
+            <div class="dropdown-content">
+                <a href="#">Feedback</a>
+                <a href="#">Contact us</a>
+                <a href="#">Log out</a>
+            </div>
+        </div>
+        <div class="profile-icon"></div>
+       
+    </div>
+</header>
+
+<div class="sidebar">
+       
+    <a href="admin_dashboard.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+    <a href="admin_manage_orders.html"><i class="fas fa-receipt"></i> Manage Orders</a>
+    <a href="admin_manage_menu.html"><i class="fas fa-utensils"></i> Manage Menu</a>
+    <a href="admin_manage_users.html"><i class="fas fa-users"></i> Manage Users</a>
+    <a href="setting.html"><i class="fas fa-cogs"></i> Settings</a>
+   
+</div>
+
+  
+<section id="menu" class="card">
+    <center> <h2>Manage Menu</h2></center>
+    <form>
+        <div class="form-group">
+            <label for="foodName">Food Name</label>
+            <input type="text" id="foodName" name="foodName">
+        </div>
+        <div class="form-group">
+            <label for="foodPrice">Price</label>
+            <input type="number" id="foodPrice" name="foodPrice">
+        </div>
+        <div class="form-group">
+            <label for="foodCategory">Category</label>
+            <select id="foodCategory" name="foodCategory">
+                <option value="burger">Burger</option>
+                <option value="pizza">Pizza</option>
+                <option value="dessert">Dessert</option>
+                <option value="drink">Drink</option>
+                <!-- Add more categories as needed -->
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="foodDescription">Description</label>
+            <textarea id="foodDescription" name="foodDescription"></textarea>
+        </div>
+        <div class="form-group">
+            <button type="submit"><a href="menu.html">Add Menu Item</button></a>
+        </div>
+    </form>
+</section>
+ 
+
+</body>
+</html>
